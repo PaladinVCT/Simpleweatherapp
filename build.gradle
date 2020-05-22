@@ -24,6 +24,16 @@ allprojects {
     }
 }
 
+ext {
+    retrofit_version = '2.3.0'
+    rxjava2_version = '2.1.8'
+    rxandroid_version = '2.1.1'
+    dagger2_version = '2.27'
+    support_version = '26.1.0'
+    navigation_version = '2.2.2'
+    okhttp_version = "3.14.0"
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
