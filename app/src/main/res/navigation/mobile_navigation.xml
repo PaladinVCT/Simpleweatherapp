@@ -3,23 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_today">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="by.lebedev.simpleweatherapp.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:id="@+id/navigation_today"
+        android:name="by.lebedev.simpleweatherapp.ui.today.TodayFragment"
+        android:label="@string/title_today"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="by.lebedev.simpleweatherapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:id="@+id/navigation_forecast"
+        android:name="by.lebedev.simpleweatherapp.ui.forecast.ForecastFragment"
+        android:label="@string/title_forecast"
         tools:layout="@layout/fragment_dashboard" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="by.lebedev.simpleweatherapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
