@@ -1,7 +1,6 @@
 package by.lebedev.simpleweatherapp.ui.today
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,9 @@ import by.lebedev.simpleweatherapp.R
 import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
 import by.lebedev.simpleweatherapp.di.component.DaggerRetrofitComponent
 import by.lebedev.simpleweatherapp.model.Weather
-import by.lebedev.simpleweatherapp.utils.Constants.Companion.TAG
+import by.lebedev.simpleweatherapp.utils.WeatherUtils
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_today.*
 import javax.inject.Inject
 
 class TodayFragment : Fragment(), TodayView {
@@ -38,11 +39,27 @@ class TodayFragment : Fragment(), TodayView {
     }
 
     override fun setupCurrentWeather(currentWeather: Weather) {
-        Log.e(TAG, currentWeather.toString())
+
+        humidityTextView.text =
+            currentWeather.main.humidity.toString().plus(getString(R.string.percent_sign))
+        pressureTextView.text =
+            currentWeather.main.pressure.toString().plus(getString(R.string.pascal_abbr))
 
 
-        //bind to views
+        temperatureTextView.text =
+            WeatherUtils().convertTempToString(currentWeather.main.temp, context)
 
+        windSpeedTextView.text =
+            currentWeather.wind.speed.toString().plus(getString(R.string.meters_per_second))
+
+        windDirectionTextView.text = WeatherUtils().convertDegToCompass(currentWeather.wind.deg)
+
+        WeatherUtils().loadWeatherImage(currentWeather.weather[0].icon, currentWeatherImageView)
+
+        locationTextView.text = currentWeather.name
+
+        tempStateTextView.text = currentWeather.weather[0].main.plus(" | ")
+            .plus(WeatherUtils().convertTempToString(currentWeather.main.temp, context))
     }
 
     override fun setupShareTextView() {

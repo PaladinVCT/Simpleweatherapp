@@ -80,10 +80,10 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/precipitation_chance" />
+                    android:src="@drawable/humidity" />
 
                 <TextView
-                    android:id="@+id/precipitationChanceTExtView"
+                    android:id="@+id/humidityTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -101,14 +101,14 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/precipitation" />
+                    android:src="@drawable/pressure" />
 
                 <TextView
-                    android:id="@+id/precipitationTextView"
+                    android:id="@+id/pressureTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    tools:text="1.0 mm" />
+                    tools:text="1020 hPa" />
             </LinearLayout>
 
             <LinearLayout
@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    tools:text="20 km/h" />
+                    tools:text="20 m/s" />
             </LinearLayout>
 
             <LinearLayout

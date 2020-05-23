@@ -6,4 +6,9 @@
     <string name="gps_not_granted_title">GPS error</string>
     <string name="gps_denied_supporting_text">"Can't load you current location "</string>
     <string name="ok">OK</string>
+    <string name="percent_sign"> %</string>
+    <string name="pascal_abbr">" hPa"</string>
+    <string name="plus_sign">+</string>
+    <string name="celsium">" C"</string>
+    <string name="meters_per_second"> m/s</string>
 </resources>
