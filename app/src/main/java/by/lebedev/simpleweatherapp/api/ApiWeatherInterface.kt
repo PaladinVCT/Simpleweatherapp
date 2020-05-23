@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface ApiWeatherInterface {
 
-    @GET("weather")
+    @GET("data/2.5/weather")
     fun getWeather(
         @Query("lat") latitude: Float,
         @Query("lon") longitude: Float,
@@ -16,7 +16,7 @@ interface ApiWeatherInterface {
         @Query("appid") appid: String
     ): Single<Weather>
 
-    @GET("forecast")
+    @GET("data/2.5/forecast")
     fun getWeatherForecast(
         @Query("lat") latitude: Float,
         @Query("lon") longitude: Float,

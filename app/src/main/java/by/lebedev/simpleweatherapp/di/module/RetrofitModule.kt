@@ -1,6 +1,10 @@
 package by.lebedev.simpleweatherapp.di.module
 
 import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
+import by.lebedev.simpleweatherapp.ui.today.TodayPresenter
+import by.lebedev.simpleweatherapp.ui.today.TodayPresenterDefault
+import by.lebedev.simpleweatherapp.ui.today.TodayView
+import by.lebedev.simpleweatherapp.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -11,7 +15,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 class RetrofitModule {
-    private val BASE_URL = "https://api.covid19api.com/"
 
     @Provides
     fun provideOkHTTPClient(interceptor: HttpLoggingInterceptor): OkHttpClient {

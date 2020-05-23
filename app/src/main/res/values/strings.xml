@@ -2,4 +2,8 @@
     <string name="app_name">Simple weather app</string>
     <string name="title_today">Today</string>
     <string name="title_forecast">Forecast</string>
+    <string name="share">Share</string>
+    <string name="gps_not_granted_title">GPS error</string>
+    <string name="gps_denied_supporting_text">"Can't load you current location "</string>
+    <string name="ok">OK</string>
 </resources>

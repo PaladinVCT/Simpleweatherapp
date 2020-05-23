@@ -9,12 +9,12 @@
         android:id="@+id/navigation_today"
         android:name="by.lebedev.simpleweatherapp.ui.today.TodayFragment"
         android:label="@string/title_today"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_today" />
 
     <fragment
         android:id="@+id/navigation_forecast"
         android:name="by.lebedev.simpleweatherapp.ui.forecast.ForecastFragment"
         android:label="@string/title_forecast"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_forecast" />
 
 </navigation>
