@@ -1,6 +1,7 @@
 package by.lebedev.simpleweatherapp.ui.fragments.forecast
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
 import by.lebedev.simpleweatherapp.di.component.DaggerRetrofitComponent
 import by.lebedev.simpleweatherapp.model.Forecast
 import by.lebedev.simpleweatherapp.model.Permissions
+import by.lebedev.simpleweatherapp.utils.Constants.Companion.TAG
 import by.lebedev.simpleweatherapp.utils.WeatherUtils
 import javax.inject.Inject
 
@@ -44,6 +46,7 @@ class ForecastFragment : Fragment(), ForecastView {
     }
 
     override fun setupRecycler(forecast: Forecast) {
+
 // setup
     }
 
