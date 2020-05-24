@@ -5,5 +5,5 @@ import by.lebedev.simpleweatherapp.model.Weather
 
 interface TodayView {
     fun setupCurrentWeather(currentWeather: Weather)
-    fun setupShareTextView()
+    fun setupShareTextView(currentWeather: Weather)
 }

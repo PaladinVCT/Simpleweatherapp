@@ -1,5 +1,6 @@
 package by.lebedev.simpleweatherapp.ui.today
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -42,7 +43,8 @@ class TodayFragment : Fragment(), TodayView {
             if (presenter.onCheckLocationPermission(requireContext())) {
 
                 presenter.onGetCurrentLocation(requireContext())?.let {
-                    presenter.onLoadCurrentWeather(requireContext(),apiWeather,it)}
+                    presenter.onLoadCurrentWeather(requireContext(), apiWeather, it)
+                }
 
             }
         })
@@ -65,10 +67,18 @@ class TodayFragment : Fragment(), TodayView {
         locationTextView.text = currentWeather.name.plus(", ").plus(currentWeather.sys.country)
     }
 
-    override fun setupShareTextView() {
+    override fun setupShareTextView(currentWeather: Weather) {
 
-        //share
-
+        shareTextView.setOnClickListener {
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                WeatherUtils.instance.convertWeatherToText(requireContext(), currentWeather)
+            )
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.send_to)))
+        }
     }
 
     private fun injectDependency() {

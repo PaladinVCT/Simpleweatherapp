@@ -3,6 +3,7 @@ package by.lebedev.simpleweatherapp.utils
 import android.content.Context
 import android.widget.ImageView
 import by.lebedev.simpleweatherapp.R
+import by.lebedev.simpleweatherapp.model.Weather
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 
@@ -58,5 +59,12 @@ class WeatherUtils {
                 dialog.dismiss()
             }
             .show()
+    }
+
+    fun convertWeatherToText(context: Context, weather: Weather): String {
+        return "Current weather in ${weather.name} is ${weather.weather[0].main.plus(", ")
+            .plus(convertTempToString(weather.main.temp, context))} " +
+                "\n Humidity is ${weather.main.humidity} %, pressure is ${weather.main.pressure} hPa " +
+                "\n Windspeed is ${weather.wind.speed} m/s from ${convertDegToCompass(weather.wind.deg)}"
     }
 }

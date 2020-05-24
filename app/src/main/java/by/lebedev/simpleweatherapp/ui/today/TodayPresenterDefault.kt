@@ -66,7 +66,8 @@ class TodayPresenterDefault(private val view: TodayView) : TodayPresenter {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                it?.let { weather -> view.setupCurrentWeather(weather) }
+                it?.let { weather -> view.setupCurrentWeather(weather)
+                view.setupShareTextView(weather)}
             }, {
                 WeatherUtils.instance.showAlert(
                     context, context.resources.getString(R.string.error_weather_load),

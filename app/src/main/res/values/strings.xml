@@ -17,4 +17,5 @@
     <string name="plus_sign">+</string>
     <string name="celsius">" C"</string>
     <string name="meters_per_second">" m/s"</string>
+    <string name="send_to">send to</string>
 </resources>
