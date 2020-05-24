@@ -7,13 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.lebedev.simpleweatherapp.R
 import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
 import by.lebedev.simpleweatherapp.di.component.DaggerRetrofitComponent
 import by.lebedev.simpleweatherapp.model.Forecast
 import by.lebedev.simpleweatherapp.model.Permissions
+import by.lebedev.simpleweatherapp.ui.recycler.AdapterForecast
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.TAG
 import by.lebedev.simpleweatherapp.utils.WeatherUtils
+import kotlinx.android.synthetic.main.fragment_forecast.*
 import javax.inject.Inject
 
 class ForecastFragment : Fragment(), ForecastView {
@@ -46,8 +49,9 @@ class ForecastFragment : Fragment(), ForecastView {
     }
 
     override fun setupRecycler(forecast: Forecast) {
-
-// setup
+        val fiveDayForecast = WeatherUtils.instance.convertForecastToFiveDay(forecast)
+        forecastRecycler.layoutManager = LinearLayoutManager(context)
+        forecastRecycler.adapter = AdapterForecast(fiveDayForecast.dayList)
     }
 
     private fun injectDependency() {

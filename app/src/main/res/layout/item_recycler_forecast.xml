@@ -12,409 +12,417 @@
         android:id="@+id/dayName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:background="@drawable/forecast_day_shape"
+        android:padding="10dp"
         android:textSize="20sp"
         tools:text="TODAY" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast00"
+    <LinearLayout
+        android:id="@+id/detailsLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
-        <ImageView
-            android:id="@+id/forecastImage00"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
-
-        <TextView
-            android:id="@+id/forecastTime00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage00"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="00:00" />
-
-        <TextView
-            android:id="@+id/forecastCondition00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage00"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime00"
-            tools:text="Clear" />
-
-        <TextView
-            android:id="@+id/forecastTemp00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast03"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast00"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
 
 
-        <ImageView
-            android:id="@+id/forecastImage03"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
+            <ImageView
+                android:id="@+id/forecastImage00"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
 
-        <TextView
-            android:id="@+id/forecastTime03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage03"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="03:00" />
+            <TextView
+                android:id="@+id/forecastTime00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_00_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage00"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/forecastCondition03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage03"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime03"
-            tools:text="Clear" />
+            <TextView
+                android:id="@+id/forecastCondition00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage00"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime00"
+                tools:text="Clear" />
 
-        <TextView
-            android:id="@+id/forecastTemp03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/forecastTemp00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast06"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
-
-
-        <ImageView
-            android:id="@+id/forecastImage06"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
-
-        <TextView
-            android:id="@+id/forecastTime06"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage06"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="06:00" />
-
-        <TextView
-            android:id="@+id/forecastCondition06"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage06"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime06"
-            tools:text="Clear" />
-
-        <TextView
-            android:id="@+id/forecastTemp06"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast09"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast03"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
 
 
-        <ImageView
-            android:id="@+id/forecastImage09"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
+            <ImageView
+                android:id="@+id/forecastImage03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
 
-        <TextView
-            android:id="@+id/forecastTime09"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage09"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="09:00" />
+            <TextView
+                android:id="@+id/forecastTime03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_03_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage03"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/forecastCondition09"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage09"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime09"
-            tools:text="Clear" />
+            <TextView
+                android:id="@+id/forecastCondition03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage03"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime03"
+                tools:text="Clear" />
 
-        <TextView
-            android:id="@+id/forecastTemp09"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/forecastTemp03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast12"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
-
-
-        <ImageView
-            android:id="@+id/forecastImage12"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
-
-        <TextView
-            android:id="@+id/forecastTime12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage12"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="12:00" />
-
-        <TextView
-            android:id="@+id/forecastCondition12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage12"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime12"
-            tools:text="Clear" />
-
-        <TextView
-            android:id="@+id/forecastTemp12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast15"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast06"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
 
 
-        <ImageView
-            android:id="@+id/forecastImage15"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
+            <ImageView
+                android:id="@+id/forecastImage06"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
 
-        <TextView
-            android:id="@+id/forecastTime15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage15"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="15:00" />
+            <TextView
+                android:id="@+id/forecastTime06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_06_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage06"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/forecastCondition15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage15"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime15"
-            tools:text="Clear" />
+            <TextView
+                android:id="@+id/forecastCondition06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage06"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime06"
+                tools:text="Clear" />
 
-        <TextView
-            android:id="@+id/forecastTemp15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/forecastTemp06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast18"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
-
-
-        <ImageView
-            android:id="@+id/forecastImage18"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
-
-        <TextView
-            android:id="@+id/forecastTime18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage18"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="18:00" />
-
-        <TextView
-            android:id="@+id/forecastCondition18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage18"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime18"
-            tools:text="Clear" />
-
-        <TextView
-            android:id="@+id/forecastTemp18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/forecast21"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/forecast_shape">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast09"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
 
 
-        <ImageView
-            android:id="@+id/forecastImage21"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_sunny_yellow_24dp" />
+            <ImageView
+                android:id="@+id/forecastImage09"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
 
-        <TextView
-            android:id="@+id/forecastTime21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage21"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="21:00" />
+            <TextView
+                android:id="@+id/forecastTime09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_09_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage09"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/forecastCondition21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@+id/forecastImage21"
-            app:layout_constraintTop_toBottomOf="@+id/forecastTime21"
-            tools:text="Clear" />
+            <TextView
+                android:id="@+id/forecastCondition09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage09"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime09"
+                tools:text="Clear" />
 
-        <TextView
-            android:id="@+id/forecastTemp21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="22 C" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/forecastTemp09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast12"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
+
+
+            <ImageView
+                android:id="@+id/forecastImage12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
+
+            <TextView
+                android:id="@+id/forecastTime12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_12_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage12"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/forecastCondition12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage12"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime12"
+                tools:text="Clear" />
+
+            <TextView
+                android:id="@+id/forecastTemp12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast15"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
+
+
+            <ImageView
+                android:id="@+id/forecastImage15"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
+
+            <TextView
+                android:id="@+id/forecastTime15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_15_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage15"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/forecastCondition15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage15"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime15"
+                tools:text="Clear" />
+
+            <TextView
+                android:id="@+id/forecastTemp15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast18"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
+
+
+            <ImageView
+                android:id="@+id/forecastImage18"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
+
+            <TextView
+                android:id="@+id/forecastTime18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_18_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage18"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/forecastCondition18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage18"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime18"
+                tools:text="Clear" />
+
+            <TextView
+                android:id="@+id/forecastTemp18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/forecast21"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/forecast_shape">
+
+
+            <ImageView
+                android:id="@+id/forecastImage21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_sunny_yellow_24dp" />
+
+            <TextView
+                android:id="@+id/forecastTime21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/_21_00"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage21"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/forecastCondition21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toEndOf="@+id/forecastImage21"
+                app:layout_constraintTop_toBottomOf="@+id/forecastTime21"
+                tools:text="Clear" />
+
+            <TextView
+                android:id="@+id/forecastTemp21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </LinearLayout>

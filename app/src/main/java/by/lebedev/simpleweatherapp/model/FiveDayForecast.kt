@@ -1,12 +1,15 @@
 package by.lebedev.simpleweatherapp.model
 
+import kotlin.collections.ArrayList
+
 
 data class FiveDayForecast(
     val dayList: ArrayList<DayForecast>
 )
 
 data class DayForecast(
-    var date: String,
+    var expanded :Boolean = true,
+    var date: String?,
     var time00: TimeDetails,
     var time03: TimeDetails,
     var time06: TimeDetails,
@@ -18,8 +21,8 @@ data class DayForecast(
 )
 
 data class TimeDetails(
-    var time: String,
-    var temperature: Double,
-    var condition: String,
-    var imageId: String
+    var time: String?,
+    var temperature: Double?,
+    var condition: String?,
+    var imageId: String?
 )
