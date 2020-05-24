@@ -5,6 +5,7 @@ import by.lebedev.simpleweatherapp.ui.today.TodayPresenter
 import by.lebedev.simpleweatherapp.ui.today.TodayPresenterDefault
 import by.lebedev.simpleweatherapp.ui.today.TodayView
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.BASE_URL
+import by.lebedev.simpleweatherapp.utils.WeatherUtils
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -38,5 +39,10 @@ class RetrofitModule {
             .build()
 
         return retrofit.create(ApiWeatherInterface::class.java)
+    }
+
+    @Provides
+    fun provideWeatherUtils(): WeatherUtils {
+        return WeatherUtils()
     }
 }

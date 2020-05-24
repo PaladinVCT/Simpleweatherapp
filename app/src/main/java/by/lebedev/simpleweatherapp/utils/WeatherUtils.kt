@@ -31,7 +31,7 @@ class WeatherUtils {
     }
 
     fun loadWeatherImage(icon: String, imageView: ImageView) {
-        Picasso.get().load("http://openweathermap.org/img/wn/${icon}@2x.png").into(imageView)
+        Picasso.get().load("https://openweathermap.org/img/wn/${icon}@4x.png").into(imageView)
     }
 
     fun convertTempToString(temp: Double, context: Context?): String {
@@ -39,10 +39,9 @@ class WeatherUtils {
         return if (temp > 0) {
             context?.getString(R.string.plus_sign).plus(
                 temp
-            ).plus(context?.getString(R.string.celsium))
+            ).plus(context?.getString(R.string.celsius))
         } else {
-            temp.toString().plus(context?.getString(R.string.celsium))
+            temp.toString().plus(context?.getString(R.string.celsius))
         }
     }
-
 }

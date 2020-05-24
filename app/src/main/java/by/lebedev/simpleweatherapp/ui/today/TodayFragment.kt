@@ -10,7 +10,6 @@ import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
 import by.lebedev.simpleweatherapp.di.component.DaggerRetrofitComponent
 import by.lebedev.simpleweatherapp.model.Weather
 import by.lebedev.simpleweatherapp.utils.WeatherUtils
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_today.*
 import javax.inject.Inject
 
@@ -18,6 +17,8 @@ class TodayFragment : Fragment(), TodayView {
 
     @Inject
     lateinit var apiWeather: ApiWeatherInterface
+    @Inject
+    lateinit var weatherUtils: WeatherUtils
 
     lateinit var presenter: TodayPresenter
 
@@ -35,31 +36,30 @@ class TodayFragment : Fragment(), TodayView {
 
         presenter = TodayPresenterDefault(this)
 
-        presenter.onLoadCurrentWeather(apiWeather, 33.0f, 33.0f)
+        if (presenter.onCheckLocationPermission(requireContext())) {
+
+            presenter.onGetCurrentLocation(requireContext())?.let {
+                presenter.onLoadCurrentWeather(apiWeather,it)}
+
+        }
+//        presenter.onLoadCurrentWeather(apiWeather, 20.0f, 30.0f)
     }
 
     override fun setupCurrentWeather(currentWeather: Weather) {
-
         humidityTextView.text =
             currentWeather.main.humidity.toString().plus(getString(R.string.percent_sign))
         pressureTextView.text =
             currentWeather.main.pressure.toString().plus(getString(R.string.pascal_abbr))
-
-
         temperatureTextView.text =
-            WeatherUtils().convertTempToString(currentWeather.main.temp, context)
-
+            weatherUtils.convertTempToString(currentWeather.main.temp, context)
         windSpeedTextView.text =
             currentWeather.wind.speed.toString().plus(getString(R.string.meters_per_second))
-
-        windDirectionTextView.text = WeatherUtils().convertDegToCompass(currentWeather.wind.deg)
-
-        WeatherUtils().loadWeatherImage(currentWeather.weather[0].icon, currentWeatherImageView)
-
+        windDirectionTextView.text = weatherUtils.convertDegToCompass(currentWeather.wind.deg)
+        weatherUtils.loadWeatherImage(currentWeather.weather[0].icon, currentWeatherImageView)
         locationTextView.text = currentWeather.name
-
         tempStateTextView.text = currentWeather.weather[0].main.plus(" | ")
-            .plus(WeatherUtils().convertTempToString(currentWeather.main.temp, context))
+            .plus(weatherUtils.convertTempToString(currentWeather.main.temp, context))
+        locationTextView.text = currentWeather.name.plus(", ").plus(currentWeather.sys.country)
     }
 
     override fun setupShareTextView() {
@@ -72,4 +72,5 @@ class TodayFragment : Fragment(), TodayView {
         val retrofitComponent = DaggerRetrofitComponent.builder().build()
         retrofitComponent.inject(this)
     }
+
 }
