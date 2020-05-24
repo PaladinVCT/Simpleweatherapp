@@ -4,7 +4,13 @@
     <string name="title_forecast">Forecast</string>
     <string name="share">Share</string>
     <string name="gps_not_granted_title">GPS error</string>
-    <string name="gps_denied_supporting_text">"Can't load you current location weather"</string>
+    <string name="gps_not_enabled_title">GPS disabled</string>
+    <string name="no_internet_title">Internet error</string>
+    <string name="error_weather_load">Error loading data</string>
+    <string name="gps_denied_supporting_text">"Can't load you current location weather. GPS permission is not granted."</string>
+    <string name="gps_not_enabled_supporting_text">"Can't load you current location weather. GPS is disabled."</string>
+    <string name="error_weather_load_supporting_text">"Can't load weather data from source"</string>
+    <string name="no_internet_supporting_text">"Internet is not available on your phone"</string>
     <string name="ok">OK</string>
     <string name="percent_sign"> %</string>
     <string name="pascal_abbr">" hPa"</string>

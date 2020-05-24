@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import by.lebedev.simpleweatherapp.R
 import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
 import by.lebedev.simpleweatherapp.di.component.DaggerRetrofitComponent
+import by.lebedev.simpleweatherapp.model.Permissions
 import by.lebedev.simpleweatherapp.model.Weather
 import by.lebedev.simpleweatherapp.utils.WeatherUtils
 import kotlinx.android.synthetic.main.fragment_today.*
@@ -36,13 +38,14 @@ class TodayFragment : Fragment(), TodayView {
 
         presenter = TodayPresenterDefault(this)
 
-        if (presenter.onCheckLocationPermission(requireContext())) {
+        Permissions.instance.gpsPermitted.observe(viewLifecycleOwner, Observer {
+            if (presenter.onCheckLocationPermission(requireContext())) {
 
-            presenter.onGetCurrentLocation(requireContext())?.let {
-                presenter.onLoadCurrentWeather(apiWeather,it)}
+                presenter.onGetCurrentLocation(requireContext())?.let {
+                    presenter.onLoadCurrentWeather(requireContext(),apiWeather,it)}
 
-        }
-//        presenter.onLoadCurrentWeather(apiWeather, 20.0f, 30.0f)
+            }
+        })
     }
 
     override fun setupCurrentWeather(currentWeather: Weather) {

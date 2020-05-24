@@ -7,7 +7,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import by.lebedev.simpleweatherapp.R
-import by.lebedev.simpleweatherapp.utils.WeatherUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
@@ -18,6 +17,18 @@ class MainActivity : AppCompatActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         presenter = MainPresenterDefault(this)
+
+        if (presenter.onCheckGpsEnabled(this)) {
+            presenter.onGpsEnabled()
+        } else {
+            presenter.onShowGpsDisabled(this)
+        }
+        if (presenter.onCheckInternetAvailable(this)) {
+            presenter.onInternetAvailable()
+        } else {
+            presenter.onShowInternetDisabled(this)
+        }
+
         val navView = nav_view
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(

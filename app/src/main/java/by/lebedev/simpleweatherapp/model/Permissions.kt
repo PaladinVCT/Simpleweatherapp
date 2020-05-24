@@ -4,11 +4,24 @@ import androidx.lifecycle.MutableLiveData
 
 class Permissions {
 
-    var internetEnabled = MutableLiveData<Boolean>()
-    var gpsEnabled = MutableLiveData<Boolean>()
-    var gpsPermitted = MutableLiveData<Boolean>()
+     val internetEnabled = MutableLiveData<Boolean>()
+     val gpsEnabled = MutableLiveData<Boolean>()
+     val gpsPermitted = MutableLiveData<Boolean>()
 
     companion object {
         val instance = Permissions()
     }
+
+    fun setInternetEnabled() {
+        internetEnabled.postValue(true)
+    }
+
+    fun setGpsEnabled() {
+        gpsEnabled.postValue(true)
+    }
+
+    fun setGpsPermitted() {
+        gpsPermitted.postValue(true)
+    }
+
 }

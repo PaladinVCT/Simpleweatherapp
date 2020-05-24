@@ -43,6 +43,6 @@ class RetrofitModule {
 
     @Provides
     fun provideWeatherUtils(): WeatherUtils {
-        return WeatherUtils()
+        return WeatherUtils.instance
     }
 }

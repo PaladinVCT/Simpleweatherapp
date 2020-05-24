@@ -14,5 +14,13 @@ interface MainPresenter {
         permissions: Array<out String>,
         grantResults: IntArray
     )
+    fun onGpsPermitted()
+    fun onGpsEnabled()
+    fun onInternetAvailable()
+    fun onShowInternetDisabled(context: Context)
+    fun onShowGpsDisabled(context: Context)
+    fun onShowGpsNotPermitted(context: Context)
+    fun onCheckInternetAvailable(context: Context) :Boolean
+    fun onCheckGpsEnabled(context: Context) :Boolean
 
 }

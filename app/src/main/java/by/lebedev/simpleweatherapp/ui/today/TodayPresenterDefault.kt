@@ -14,14 +14,19 @@ import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import by.lebedev.simpleweatherapp.App
 import by.lebedev.simpleweatherapp.R
 import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
 import by.lebedev.simpleweatherapp.model.LatLon
+import by.lebedev.simpleweatherapp.model.Permissions
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.API_KEY_VALUE
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.LOCATION_PERMISSION_REQUEST_CODE
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.METRIC_UNITS
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.TAG
+import by.lebedev.simpleweatherapp.utils.WeatherUtils
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -47,14 +52,27 @@ class TodayPresenterDefault(private val view: TodayView) : TodayPresenter {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun onLoadCurrentWeather(apiWeather: ApiWeatherInterface, latLon: LatLon) {
-
-        val disposable = apiWeather.getWeather(latLon.latitude.toFloat(), latLon.longitude.toFloat(), METRIC_UNITS, API_KEY_VALUE)
+    override fun onLoadCurrentWeather(
+        context: Context,
+        apiWeather: ApiWeatherInterface,
+        latLon: LatLon
+    ) {
+        val disposable = apiWeather.getWeather(
+            latLon.latitude.toFloat(),
+            latLon.longitude.toFloat(),
+            METRIC_UNITS,
+            API_KEY_VALUE
+        )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 it?.let { weather -> view.setupCurrentWeather(weather) }
             }, {
+                WeatherUtils.instance.showAlert(
+                    context, context.resources.getString(R.string.error_weather_load),
+                    context.resources.getString(R.string.error_weather_load_supporting_text),
+                    context.resources.getString(R.string.ok)
+                )
                 Log.e(TAG, it.localizedMessage)
             })
     }
