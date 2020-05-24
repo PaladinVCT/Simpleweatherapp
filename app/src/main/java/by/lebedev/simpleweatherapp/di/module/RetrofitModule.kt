@@ -1,9 +1,6 @@
 package by.lebedev.simpleweatherapp.di.module
 
 import by.lebedev.simpleweatherapp.api.ApiWeatherInterface
-import by.lebedev.simpleweatherapp.ui.today.TodayPresenter
-import by.lebedev.simpleweatherapp.ui.today.TodayPresenterDefault
-import by.lebedev.simpleweatherapp.ui.today.TodayView
 import by.lebedev.simpleweatherapp.utils.Constants.Companion.BASE_URL
 import by.lebedev.simpleweatherapp.utils.WeatherUtils
 import dagger.Module

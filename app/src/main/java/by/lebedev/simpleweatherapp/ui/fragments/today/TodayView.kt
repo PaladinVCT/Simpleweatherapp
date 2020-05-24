@@ -1,4 +1,4 @@
-package by.lebedev.simpleweatherapp.ui.today
+package by.lebedev.simpleweatherapp.ui.fragments.today
 
 import by.lebedev.simpleweatherapp.model.Weather
 

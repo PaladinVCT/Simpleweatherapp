@@ -1,4 +1,4 @@
-package by.lebedev.simpleweatherapp.ui.forecast
+package by.lebedev.simpleweatherapp.ui.fragments.forecast
 
 import by.lebedev.simpleweatherapp.model.Forecast
 

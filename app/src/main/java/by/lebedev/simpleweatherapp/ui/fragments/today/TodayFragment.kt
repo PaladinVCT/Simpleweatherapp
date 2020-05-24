@@ -1,4 +1,4 @@
-package by.lebedev.simpleweatherapp.ui.today
+package by.lebedev.simpleweatherapp.ui.fragments.today
 
 import android.content.Intent
 import android.os.Bundle
@@ -43,7 +43,7 @@ class TodayFragment : Fragment(), TodayView {
             if (presenter.onCheckLocationPermission(requireContext())) {
 
                 presenter.onGetCurrentLocation(requireContext())?.let {
-                    presenter.onLoadCurrentWeather(requireContext(), apiWeather, it)
+                    presenter.onLoadCurrentWeather(this, requireContext(), apiWeather, it)
                 }
 
             }
